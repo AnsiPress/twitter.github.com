@@ -14,7 +14,7 @@
 
     <meta name="ansipress:url" content="https://ansipress.github.io" />
     <meta name="ansipress:creator" content="@MiteshShah" />
-    <meta name="ansipress:site" content="@AnsiPressOSS" />
+    <meta name="ansipress:site" content="@AnsiPress" />
     <meta name="ansipress:title" content="AnsiPress <3 Open Source" />
     <meta name="ansipress:description" content="A listing of open source projects from AnsiPress." />
     <meta name="ansipress:card" content="summary" />
@@ -23,7 +23,7 @@
   <body>
     <div id="wrapper" class="grid clearfix">
       <div id="main" class="grid-1">
-        <div id="logo"><h1>AnsiPress Open Source</h1></div>
+        <h1>AnsiPress Open Source</h1>
         <h1>AnsiPress is built on open source software.</h1>
         <p>Want to help? <a href="https://ansipress.slack.com">Join the Slack</a></p>
         <p>&nbsp;</p>
@@ -35,7 +35,7 @@
           <p>
             <a href="https://github.com/ansipress/repositories"><span id="num-repos"><img src="assets/spinner.gif" /></span> public repos</a>
             <br>
-            <a href="https://github.com/ansipress?tab=people"><span id="num-members"><img src="assets/spinner.gif" /></span> members</a>
+            <a href="https://github.com/ansipress?tab=members"><span id="num-members"><img src="assets/spinner.gif" /></span> members</a>
           </p>
           <p class="email"><a href="mailto:Mr.Miteshah+AnsiPress@gmail.com">Mr.Miteshah+AnsiPress@gmail.com</a></p>
         </div>
@@ -229,33 +229,6 @@
         return opacity;
       }
 
-      function makeLarry(sizeName, speed) {
-        var size = sizeDimensions[sizeName];
-        var top = Math.floor((flyzone().height() - size) * Math.random());
-
-        var $img = $("<img>")
-          .addClass("larry size-" + sizeName)
-          .attr("src", "assets/larry.png")
-          .attr("width", size)
-          .attr("height", size)
-          .css({
-            position: "absolute",
-            opacity: randomOpacity(0.4),
-            top: top,
-            left: -size
-          });
-
-        $img.prependTo(flyzone());
-
-        var left = flyzone().width() + size;
-
-        $img.animate({left: left}, speed, function () {
-          $img.remove();
-          makeRandomLarry();
-        });
-
-        return $img;
-      }
 
       function makeRandomLarry() {
         var size = randomItem(sizes);
